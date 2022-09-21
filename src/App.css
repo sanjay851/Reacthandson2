@@ -1,38 +1,77 @@
-.App {
+body{
+  background: linear-gradient(rgb(79, 189, 233),rgb(201, 43, 69),rgb(56, 185, 42));
+  background-attachment: fixed;
+}
+
+h1{
   text-align: center;
+  text-transform: uppercase;
+  color:rgb(243, 230, 58);
+  background-color: darkslategray;
 }
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.form{
+ text-align: center;
 }
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+label{
+  font-weight: 500;
+  font-size: 20px;
 }
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+input[type="text"],input[type="number"]{
+  border: 2px solid rgb(203, 19, 43);
+  border-radius: 30px;
+  margin: 15px;
+  width: 250px;
+  padding: 15px;
+  background-color: rgb(198, 246, 230);
+}
+input[type="text"]:focus,input[type="number"]:focus{
+  background-color: rgb(74, 133, 135);
+}
+button{
+  position: absolute;
+  left: 40%;
+  top: 55%;
+  background-color: rgb(84, 6, 75);
+  margin: 15px;
+  padding: 12px 25px;
+  border-radius: 25px;
+  width: 25%;
+  font-size: large;
+  font-weight: 600;
+  border: 2px solid rgb(8, 237, 161);
+  color: rgb(24, 227, 234);
+}
+button:active{
+  background-color: rgb(44, 44, 215);
+  color: rgb(38, 110, 174);
+}
+button:hover{
+  background-color: black;
+  color: gold;
+}
+#formdata{
   display: flex;
-  flex-direction: column;
-  align-items: center;
+  border: 1px solid rgb(29, 53, 149);
+  position: absolute;
+  top: 70%;
+  left: 150px;
+  width: 80%;
+  flex-direction: row;
+  flex-wrap: wrap;
+  background-color: rgb(130, 195, 196);
+}
+.databox{
+  display: flex;
+  border: 2px solid black;
+  width: 380px;
+  color:gold;
+  margin: 10px 30px;
+  padding: 25px;
+  font-style: italic;
+  font-weight: bold;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  border-radius: 25px;
+  background-image:linear-gradient(rgb(84, 11, 45),rgb(105, 79, 170),rgb(19, 19, 14))
 }
 
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}

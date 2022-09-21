@@ -1,25 +1,42 @@
-import logo from './logo.svg';
+import React from 'react';
+import FeedbackForm from './Components/FeedbackForm';
 import './App.css';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+class App extends React.Component {
+  constructor(){
+    super();
+    this.state = {
+      name: '',
+      depart: '',
+      rating:'',
+      users:[]
+    }
+  }
 
+  updateName = (e) => {
+    this.setState({name:e.target.value});
+  }
+
+  updateDepartment = (e) => {
+    this.setState({depart:e.target.value});
+  }
+
+  updateRating = (e) => {  
+    this.setState({rating:e.target.value});
+  }
+  handleOnClick  = () => {
+    const updatedUsers = this.state.users;
+    updatedUsers.push({name:this.state.name, depart:this.state.depart, rating:this.state.rating})
+    this.setState({users:updatedUsers, name:'', depart:'', rating:'' })
+  }
+  render() {
+    return (
+      <div>
+      <button onClick={this.handleOnClick}> Submit </button>
+        <FeedbackForm name={this.state.name} depart={this.state.depart} rating={this.state.rating} users={this.state.users} 
+        updateName={this.updateName} updateDepartment={this.updateDepartment} updateRating={this.updateRating}/>
+      </div>
+    )
+  }
+}
 export default App;
